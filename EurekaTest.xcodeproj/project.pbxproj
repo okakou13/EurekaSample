@@ -13,6 +13,7 @@
 		435991DB2445F103006FA67C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435991D92445F103006FA67C /* Main.storyboard */; };
 		435991DD2445F106006FA67C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 435991DC2445F106006FA67C /* Assets.xcassets */; };
 		435991E02445F106006FA67C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435991DE2445F106006FA67C /* LaunchScreen.storyboard */; };
+		B8237284AF08DBC90600EB27 /* Pods_EurekaTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78BF92239E8FADD1026B8C2 /* Pods_EurekaTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		435991DC2445F106006FA67C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		435991DF2445F106006FA67C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		435991E12445F106006FA67C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BF6F8FC9CA1DD2049AF59B3 /* Pods-EurekaTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EurekaTest.release.xcconfig"; path = "Target Support Files/Pods-EurekaTest/Pods-EurekaTest.release.xcconfig"; sourceTree = "<group>"; };
+		7F9FCEB1B42C4CFDC0893732 /* Pods-EurekaTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EurekaTest.debug.xcconfig"; path = "Target Support Files/Pods-EurekaTest/Pods-EurekaTest.debug.xcconfig"; sourceTree = "<group>"; };
+		A78BF92239E8FADD1026B8C2 /* Pods_EurekaTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EurekaTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8237284AF08DBC90600EB27 /* Pods_EurekaTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				435991D22445F103006FA67C /* EurekaTest */,
 				435991D12445F103006FA67C /* Products */,
+				AA3AF0AD01D5E6FB68DF3570 /* Pods */,
+				A2FA9493E6A2FD1E130E65DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = EurekaTest;
 			sourceTree = "<group>";
 		};
+		A2FA9493E6A2FD1E130E65DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A78BF92239E8FADD1026B8C2 /* Pods_EurekaTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA3AF0AD01D5E6FB68DF3570 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F9FCEB1B42C4CFDC0893732 /* Pods-EurekaTest.debug.xcconfig */,
+				5BF6F8FC9CA1DD2049AF59B3 /* Pods-EurekaTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 435991E42445F106006FA67C /* Build configuration list for PBXNativeTarget "EurekaTest" */;
 			buildPhases = (
+				12BBA35C4687DF195F5712F1 /* [CP] Check Pods Manifest.lock */,
 				435991CC2445F103006FA67C /* Sources */,
 				435991CD2445F103006FA67C /* Frameworks */,
 				435991CE2445F103006FA67C /* Resources */,
+				C4D2E72FCFF8026B4284B69C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12BBA35C4687DF195F5712F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EurekaTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4D2E72FCFF8026B4284B69C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EurekaTest/Pods-EurekaTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EurekaTest/Pods-EurekaTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EurekaTest/Pods-EurekaTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		435991CC2445F103006FA67C /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		435991E52445F106006FA67C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F9FCEB1B42C4CFDC0893732 /* Pods-EurekaTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		435991E62445F106006FA67C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BF6F8FC9CA1DD2049AF59B3 /* Pods-EurekaTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
